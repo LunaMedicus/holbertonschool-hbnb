@@ -35,10 +35,13 @@ class Review(BaseModel):
         self.user_id = user_id
 
     def to_dict(self):
-        return {
+        result = {
             "id": self.id,
             "text": self.text,
             "rating": self.rating,
             "place_id": self.place_id,
             "user_id": self.user_id,
         }
+        if self.user:
+            result["reviewer_name"] = f"{self.user.first_name} {self.user.last_name}"
+        return result

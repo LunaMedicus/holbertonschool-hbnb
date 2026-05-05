@@ -16,7 +16,12 @@ def create_app(config_class="default"):
     db.init_app(app)
     jwt.init_app(app)
     bcrypt.init_app(app)
-    cors.init_app(app, resources={r"/api/*": {"origins": "*"}})
+    cors.init_app(app, resources={r"/api/*": {
+        "origins": ["http://127.0.0.1:5500", "http://localhost:5500", "http://127.0.0.1:8080", "http://localhost:8080"],
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"],
+        "supports_credentials": True,
+    }})
 
     api = Api(
         app,

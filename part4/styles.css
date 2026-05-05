@@ -1,6 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 :root {
-    --primary: #FF5A5F;
-    --primary-dark: #E04E53;
+    --primary: #D9383C;
+    --primary-dark: #B83034;
     --secondary: #008489;
     --bg-light: #FFFFFF;
     --bg-gray: #F7F7F7;
@@ -14,6 +17,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
 }
 
 body {
@@ -133,7 +140,8 @@ h1 {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    outline: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
     border-color: var(--secondary);
     box-shadow: 0 0 0 2px rgba(0, 132, 137, 0.2);
 }
@@ -214,7 +222,7 @@ h1 {
     background-color: var(--bg-light);
     border: 1px solid var(--border);
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 0;
     padding: 10px;
     overflow: hidden;
     transition: box-shadow 0.2s, transform 0.2s;
@@ -223,13 +231,6 @@ h1 {
 .place-card:hover {
     box-shadow: 0 4px 16px var(--shadow);
     transform: translateY(-2px);
-}
-
-.card-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
 }
 
 .card-content {
@@ -335,7 +336,7 @@ h1 {
     background-color: var(--bg-light);
     border: 1px solid var(--border);
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     padding: 10px;
 }
 
@@ -352,7 +353,7 @@ h1 {
 }
 
 .review-card .stars {
-    color: #FFD700;
+    color: #C59400;
     font-size: 0.9rem;
 }
 
@@ -385,5 +386,11 @@ h1 {
     .filter-bar {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+@media (min-width: 1400px) {
+    main {
+        max-width: 1400px;
     }
 }
