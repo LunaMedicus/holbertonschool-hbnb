@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBnB - Place Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/icon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="HBnB Logo" class="logo">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html" id="login-link" class="login-button">Login</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="place-details" class="place-details">
+        </section>
+        <section id="reviews-section" class="reviews-section">
+            <h2>Reviews</h2>
+            <div id="reviews-list">
+            </div>
+        </section>
+        <section id="add-review" class="add-review" style="display:none">
+            <h2>Add a Review</h2>
+            <form id="review-form-inline">
+                <div class="form-group">
+                    <label for="review-text">Your Review</label>
+                    <textarea id="review-text" name="text" rows="4" placeholder="Write your review..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="review-rating">Rating</label>
+                    <select id="review-rating" name="rating" required>
+                        <option value="1">1 - Poor</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="3">3 - Good</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="5">5 - Excellent</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+                <p id="review-message" class="error-message" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 HBnB. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

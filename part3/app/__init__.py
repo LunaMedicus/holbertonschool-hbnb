@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restx import Api
 from sqlalchemy.exc import IntegrityError
-from app.extensions import db, jwt, bcrypt
+from app.extensions import db, jwt, bcrypt, cors
 from config import config
 
 
@@ -16,6 +16,7 @@ def create_app(config_class="default"):
     db.init_app(app)
     jwt.init_app(app)
     bcrypt.init_app(app)
+    cors.init_app(app, resources={r"/api/*": {"origins": "*"}})
 
     api = Api(
         app,
